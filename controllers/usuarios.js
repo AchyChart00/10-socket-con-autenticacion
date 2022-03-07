@@ -3,7 +3,6 @@ const bcryptjs = require("bcryptjs");
 //Permite crear instancias de mi modelo
 //es un estandar la U mayuscula
 const Usuario = require("../models/usuario");
-const usuario = require("../models/usuario");
 
 const usuariosGet = async (req = request, res = response) => {
   //const { q, nombre = "No name", apikey } = req.query;
