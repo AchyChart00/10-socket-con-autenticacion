@@ -21,6 +21,7 @@
     "google-auth-library": "^7.14.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.2.4",
-    "nanoid": "^3.3.3"
+    "nanoid": "^3.3.3",
+    "socket.io": "^4.5.0"
   }
 }
