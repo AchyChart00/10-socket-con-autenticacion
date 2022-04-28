@@ -5,24 +5,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso denegado</title>
+    <title>Google Signin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
-<body>
-    <h1>google sign-in</h1>
+<body class"container">
 
-    <hr>
+    <div class="row mt-5">
+        <div class="col-sm-6">
+            <h1>google sign-in</h1>
 
-    <div id="g_id_onload" data-client_id="573916984278-vlam5dc6p7r8v5ilfgcgelkhqeoe48e9.apps.googleusercontent.com"
-        data-auto_prompt="false" data-callback="handleCredentialResponse">
+            <hr>
+
+            <div id="g_id_onload"
+                data-client_id="573916984278-vlam5dc6p7r8v5ilfgcgelkhqeoe48e9.apps.googleusercontent.com"
+                data-auto_prompt="false" data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+            </div>
+            <br>
+            <button id="google_signout">
+                sign out
+            </button>
+        </div>
+
+        <div class="col-sm-6">
+
+
+
+        </div>
     </div>
-    <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
-        data-shape="rectangular" data-logo_alignment="left">
-    </div>
 
-    <button id="google_signout">
-        sign out
-    </button>
+
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
