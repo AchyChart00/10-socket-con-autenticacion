@@ -58,7 +58,7 @@ const googleSignIn = async (req, res = response) => {
       const data = {
         correo,
         nombre,
-        role: 'ADMIN_ROLE', // le asigna un rol por defecto
+        role: "ADMIN_ROLE", // le asigna un rol por defecto
         password: ":P",
         img,
         google: true,
@@ -91,4 +91,16 @@ const googleSignIn = async (req, res = response) => {
   }
 };
 
-module.exports = { login, googleSignIn };
+const renovarToken = async (req, res = response) => {
+  const { usuario } = req;
+
+  //generar JWT
+  const token = await generarJWT(usuario.id);
+
+  res.json({
+    usuario,
+    token,
+  });
+};
+
+module.exports = { login, googleSignIn, renovarToken };

@@ -21,7 +21,8 @@ const UsuarioSchema = Schema({
   role: {
     type: String,
     required: true,
-    //enum: ["ADMIN_ROLE", "USER_ROLE"],
+    default: "USER_ROLE",
+    enum: ["ADMIN_ROLE", "USER_ROLE"],
   },
   estado: {
     type: Boolean,
@@ -34,12 +35,11 @@ const UsuarioSchema = Schema({
 });
 
 //modificamos el json que de resp
-UsuarioSchema.methods.toJSON =function(){
-  const{__v, password, _id, ...usuario} = this.toObject();
-  usuario.uid=_id;
+UsuarioSchema.methods.toJSON = function () {
+  const { __v, password, _id, ...usuario } = this.toObject();
+  usuario.uid = _id;
   return usuario;
-}
-
+};
 
 //exportamos el modelo y va a ser el nombre que va a almacenar en la BD
 module.exports = model("Usuario", UsuarioSchema);
